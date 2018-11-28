@@ -1,0 +1,22 @@
+{
+  "name": "form-server",
+  "version": "1.0.0",
+  "main": "index.js",
+  "author": "dbrudnicki",
+  "license": "MIT",
+  "private": true,
+  "scripts": {
+    "start": "nodemon ."
+  },
+  "dependencies": {
+    "graphql-yoga": "^1.16.7"
+  },
+  "devDependencies": {
+    "nodemon": "^1.18.7"
+  },
+  "prettier": {
+    "semi": false,
+    "singleQuote": true,
+    "printWidth": 100
+  }
+}

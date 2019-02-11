@@ -1,5 +1,7 @@
 const { GraphQLServer } = require('graphql-yoga')
 
+const PORT = process.env.PORT || 9123
+
 let dataForm = {
   id: '1',
   fname: 'John',
@@ -23,7 +25,7 @@ const typeDefs = `
   }
 
   type Query {
-    getForm: Form!
+    form: Form!
   }
 
   type Mutation {
@@ -33,7 +35,7 @@ const typeDefs = `
 
 const resolvers = {
   Query: {
-    getForm() {
+    form() {
       return dataForm
     }
   },
@@ -47,4 +49,6 @@ const resolvers = {
 
 const server = new GraphQLServer({ typeDefs, resolvers })
 
-server.start(() => console.log(`Server started at: ${new Date()}`))
+server.start({ port: PORT }, () =>
+  console.log(`Server started at: ${new Date()} on port: ${PORT}.`)
+)

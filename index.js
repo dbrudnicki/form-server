@@ -1,6 +1,6 @@
 const { GraphQLServer } = require('graphql-yoga')
 
-const PORT = process.env.PORT || 9123
+const PORT = process.env.PORT || 4000
 
 let dataForm = {
   id: '1',
@@ -10,6 +10,7 @@ let dataForm = {
 }
 
 const typeDefs = `
+  
   type Form {
     id: ID
     fname: String
